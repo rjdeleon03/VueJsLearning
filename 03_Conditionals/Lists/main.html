@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello World</title>
+
+    <!-- Vue.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+
+    <div id="app">
+        <ul>
+            <li v-for="(ingredient, i) in ingredients">{{ ingredient }} ({{ i }})</li>
+        </ul>
+        <button @click="ingredients.push('spices')"
+            :key="ingredient">Add Ingredient</button>
+        <hr>
+        <ul>
+            <template v-for="(person) in persons">
+                <div v-for="(value, key, index) in person">
+                    <p>{{ key }} : {{ value }}</p>
+                </div>
+            </template>
+        </ul>
+        <hr>
+        <span v-for="n in 10">{{ n }}<br></span>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./main.js"></script>
+    
+</body>
+</html>
